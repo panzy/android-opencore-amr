@@ -67,6 +67,11 @@ LOCAL_SHARED_LIBRARIES :=
 LOCAL_C_INCLUDES := \
 	$(PV_TOP)/codecs_v2/audio/gsm_amr/amr_nb/common/src \
  	$(PV_TOP)/codecs_v2/audio/gsm_amr/amr_nb/common/include \
+ 	$(PV_TOP)/codecs_v2/audio/gsm_amr/amr_nb/oscl/config/android \
+ 	$(PV_TOP)/codecs_v2/audio/gsm_amr/amr_nb/oscl/config/shared \
+ 	$(PV_TOP)/codecs_v2/audio/gsm_amr/amr_nb/oscl/osclbase/src \
+ 	$(PV_TOP)/codecs_v2/audio/gsm_amr/amr_nb/oscl/osclerror/src \
+ 	$(PV_TOP)/codecs_v2/audio/gsm_amr/amr_nb/oscl/osclmemory/src \
  	$(PV_INCLUDES)
 
 LOCAL_COPY_HEADERS_TO := $(PV_COPY_HEADERS_TO)
