@@ -9,5 +9,5 @@ mkdir -p src/$DIR
 
 swig -java -package $PKG -includeall -verbose -outdir src/$DIR -c++ \
     -I/usr/local/include -I/System/Library/Frameworks/JavaVM.framework/Headers \
-    -I. -o java_interface_wrap.cpp cybertech_amr_interface.i
+    -I./jni -o jni/java_interface_wrap.cpp jni/cybertech_amr_interface.i
 

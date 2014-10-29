@@ -19,7 +19,8 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
 	wrapper.cpp \
-	java_interface_wrap.cpp
+	jni/java_interface_wrap.cpp \
+	jni/amrnb.cpp
 
 
 LOCAL_MODULE := libamrnb

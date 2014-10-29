@@ -211,107 +211,40 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 #define SWIG_contract_assert(nullreturn, expr, msg) if (!(expr)) {SWIG_JavaThrowException(jenv, SWIG_JavaIllegalArgumentException, msg); return nullreturn; } else
 
 
-#include "interf_dec.h"
-#include "interf_enc.h"
+#include "amrnb.h"
 
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-SWIGEXPORT jlong JNICALL Java_cn_com_cybertech_pm_media_audio_AmrnbJNI_Decoder_1Interface_1init(JNIEnv *jenv, jclass jcls) {
-  jlong jresult = 0 ;
-  void *result = 0 ;
-  
+SWIGEXPORT void JNICALL Java_cn_com_cybertech_pm_media_audio_AmrnbJNI_Decoder_1init(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
-  result = (void *)Decoder_Interface_init();
-  *(void **)&jresult = result; 
-  return jresult;
+  Decoder_init();
 }
 
 
-SWIGEXPORT void JNICALL Java_cn_com_cybertech_pm_media_audio_AmrnbJNI_Decoder_1Interface_1exit(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  void *arg1 = (void *) 0 ;
-  
+SWIGEXPORT void JNICALL Java_cn_com_cybertech_pm_media_audio_AmrnbJNI_Decoder_1exit(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
-  arg1 = *(void **)&jarg1; 
-  Decoder_Interface_exit(arg1);
+  Decoder_exit();
 }
 
 
-SWIGEXPORT void JNICALL Java_cn_com_cybertech_pm_media_audio_AmrnbJNI_Decoder_1Interface_1Decode(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jint jarg4) {
-  void *arg1 = (void *) 0 ;
-  unsigned char *arg2 = (unsigned char *) 0 ;
-  short *arg3 = (short *) 0 ;
-  int arg4 ;
+SWIGEXPORT void JNICALL Java_cn_com_cybertech_pm_media_audio_AmrnbJNI_Decoder_1decode(JNIEnv *jenv, jclass jcls, jbyteArray jarg2, jshortArray jarg3) {
+  JNIEnv *arg1 = (JNIEnv *) 0 ;
+  jbyteArray arg2 ;
+  jshortArray arg3 ;
   
   (void)jenv;
   (void)jcls;
-  arg1 = *(void **)&jarg1; 
-  arg2 = *(unsigned char **)&jarg2; 
-  arg3 = *(short **)&jarg3; 
-  arg4 = (int)jarg4; 
-  Decoder_Interface_Decode(arg1,(unsigned char const *)arg2,arg3,arg4);
-}
-
-
-SWIGEXPORT jint JNICALL Java_cn_com_cybertech_pm_media_audio_AmrnbJNI_MR475_1get(JNIEnv *jenv, jclass jcls) {
-  jint jresult = 0 ;
-  Mode result;
   
-  (void)jenv;
-  (void)jcls;
-  result = (Mode)MR475;
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jlong JNICALL Java_cn_com_cybertech_pm_media_audio_AmrnbJNI_Encoder_1Interface_1init(JNIEnv *jenv, jclass jcls, jint jarg1) {
-  jlong jresult = 0 ;
-  int arg1 ;
-  void *result = 0 ;
+  arg1 = jenv;
   
-  (void)jenv;
-  (void)jcls;
-  arg1 = (int)jarg1; 
-  result = (void *)Encoder_Interface_init(arg1);
-  *(void **)&jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_cn_com_cybertech_pm_media_audio_AmrnbJNI_Encoder_1Interface_1exit(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  void *arg1 = (void *) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(void **)&jarg1; 
-  Encoder_Interface_exit(arg1);
-}
-
-
-SWIGEXPORT jint JNICALL Java_cn_com_cybertech_pm_media_audio_AmrnbJNI_Encoder_1Interface_1Encode(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3, jlong jarg4, jint jarg5) {
-  jint jresult = 0 ;
-  void *arg1 = (void *) 0 ;
-  enum Mode arg2 ;
-  short *arg3 = (short *) 0 ;
-  unsigned char *arg4 = (unsigned char *) 0 ;
-  int arg5 ;
-  int result;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(void **)&jarg1; 
-  arg2 = (enum Mode)jarg2; 
-  arg3 = *(short **)&jarg3; 
-  arg4 = *(unsigned char **)&jarg4; 
-  arg5 = (int)jarg5; 
-  result = (int)Encoder_Interface_Encode(arg1,arg2,(short const *)arg3,arg4,arg5);
-  jresult = (jint)result; 
-  return jresult;
+  arg2 = jarg2; 
+  arg3 = jarg3; 
+  Decoder_decode(arg1,arg2,arg3);
 }
 
 

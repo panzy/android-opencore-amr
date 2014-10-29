@@ -9,30 +9,16 @@
 package cn.com.cybertech.pm.media.audio;
 
 public class Amrnb {
-  public static SWIGTYPE_p_void Decoder_Interface_init() {
-    long cPtr = AmrnbJNI.Decoder_Interface_init();
-    return (cPtr == 0) ? null : new SWIGTYPE_p_void(cPtr, false);
+  public static void Decoder_init() {
+    AmrnbJNI.Decoder_init();
   }
 
-  public static void Decoder_Interface_exit(SWIGTYPE_p_void state) {
-    AmrnbJNI.Decoder_Interface_exit(SWIGTYPE_p_void.getCPtr(state));
+  public static void Decoder_exit() {
+    AmrnbJNI.Decoder_exit();
   }
 
-  public static void Decoder_Interface_Decode(SWIGTYPE_p_void state, SWIGTYPE_p_unsigned_char in, SWIGTYPE_p_short out, int bfi) {
-    AmrnbJNI.Decoder_Interface_Decode(SWIGTYPE_p_void.getCPtr(state), SWIGTYPE_p_unsigned_char.getCPtr(in), SWIGTYPE_p_short.getCPtr(out), bfi);
-  }
-
-  public static SWIGTYPE_p_void Encoder_Interface_init(int dtx) {
-    long cPtr = AmrnbJNI.Encoder_Interface_init(dtx);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_void(cPtr, false);
-  }
-
-  public static void Encoder_Interface_exit(SWIGTYPE_p_void state) {
-    AmrnbJNI.Encoder_Interface_exit(SWIGTYPE_p_void.getCPtr(state));
-  }
-
-  public static int Encoder_Interface_Encode(SWIGTYPE_p_void state, Mode mode, SWIGTYPE_p_short speech, SWIGTYPE_p_unsigned_char out, int forceSpeech) {
-    return AmrnbJNI.Encoder_Interface_Encode(SWIGTYPE_p_void.getCPtr(state), mode.swigValue(), SWIGTYPE_p_short.getCPtr(speech), SWIGTYPE_p_unsigned_char.getCPtr(out), forceSpeech);
+  public static void Decoder_decode(byte[] in, short[] out) {
+    AmrnbJNI.Decoder_decode(in, out);
   }
 
 }

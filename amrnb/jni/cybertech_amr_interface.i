@@ -28,8 +28,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 %module Amrnb
 %{
-#include "interf_dec.h"
-#include "interf_enc.h"
+#include "amrnb.h"
 %}
 
 // Enable the JNI class to load the required native library.
@@ -48,5 +47,4 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     $1 = jenv;
 %}
 
-%include "interf_dec.h"
-%include "interf_enc.h"
+%include "amrnb.h"

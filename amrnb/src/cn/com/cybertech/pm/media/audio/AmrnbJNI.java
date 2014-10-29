@@ -19,11 +19,7 @@ public class AmrnbJNI {
     }
   }
 
-  public final static native long Decoder_Interface_init();
-  public final static native void Decoder_Interface_exit(long jarg1);
-  public final static native void Decoder_Interface_Decode(long jarg1, long jarg2, long jarg3, int jarg4);
-  public final static native int MR475_get();
-  public final static native long Encoder_Interface_init(int jarg1);
-  public final static native void Encoder_Interface_exit(long jarg1);
-  public final static native int Encoder_Interface_Encode(long jarg1, int jarg2, long jarg3, long jarg4, int jarg5);
+  public final static native void Decoder_init();
+  public final static native void Decoder_exit();
+  public final static native void Decoder_decode(byte[] jarg2, short[] jarg3);
 }
