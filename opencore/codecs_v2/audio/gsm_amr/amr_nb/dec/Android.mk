@@ -1,11 +1,11 @@
 LOCAL_PATH := $(call my-dir)
-include $(CLEAR_VARS)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libpv_amr_nb_common_lib
 LOCAL_SRC_FILES := ../common/obj/local/$(TARGET_ARCH_ABI)/libpv_amr_nb_common_lib.a
 include $(PREBUILT_STATIC_LIBRARY)
 
+include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
 	src/decoder_gsm_amr.cpp \
  	src/a_refl.cpp \
@@ -73,4 +73,4 @@ LOCAL_COPY_HEADERS := \
 	include/decoder_gsm_amr.h \
  	include/pvamrnbdecoder_api.h
 
-include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_STATIC_LIBRARY)
