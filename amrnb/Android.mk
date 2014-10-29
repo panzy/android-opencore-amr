@@ -18,7 +18,8 @@ include $(PREBUILT_STATIC_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-	wrapper.cpp
+	wrapper.cpp \
+	java_interface_wrap.cpp
 
 
 LOCAL_MODULE := libamrnb
