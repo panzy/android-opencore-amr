@@ -1,3 +1,12 @@
+/**
+ * amrnb.cpp
+ *
+ * 封装 ../wrapper.cpp 中的函数，采用 JNI 数据类型传递参数，
+ * 从而简化 swig 生成的 Java 封装类的接口。
+ *
+ * --
+ * panzy, 2014-10-29
+ */
 #include <jni.h>
 #include <inttypes.h>
 #include "interf_dec.h"
